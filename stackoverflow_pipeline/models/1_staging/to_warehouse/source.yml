@@ -2,7 +2,9 @@
 version: 2
 sources:
 
-  - name: stackoverflow
+  - name: 0_stackoverflow
+    tags: 
+      - "data_lake_[raw]"
     description: The data lake where all raw data is dumped - append only.  Data from https://tinyurl.com/yc2w6zeh
     tables:
       - name: badges

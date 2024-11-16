@@ -6,4 +6,4 @@ SELECT
     CAST(wiki_post_id AS INTEGER) AS wiki_post_id,
     CAST(CURRENT_TIMESTAMP() AS TIMESTAMP) AS source_partition_timestamp
 
-FROM {{ source('stackoverflow','tags') }}
+FROM {{ source('0_stackoverflow','tags') }}

@@ -6,4 +6,4 @@ SELECT
     CAST(creation_date AS TIMESTAMP) AS created_at,
     CAST(CURRENT_TIMESTAMP() AS TIMESTAMP) AS source_partition_timestamp
 
-FROM {{ source('stackoverflow','post_links') }}
+FROM {{ source('0_stackoverflow','post_links') }}

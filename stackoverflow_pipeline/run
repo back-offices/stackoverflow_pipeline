@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# grant permissions to run the script
+chmod +x ./run
+
+# Exit the script if any command fails
+set -e
+
+# Step 1: Compile dbt models
+echo "Starting dbt compile..."
+dbt compile
+echo "dbt compile completed successfully."
+
+# Step 2: Run dbt models
+echo "Starting dbt run..."
+dbt run
+echo "dbt run completed successfully."
+
+# Step 3: Generate dbt docs
+echo "Generating dbt docs..."
+dbt docs generate
+echo "dbt docs generated successfully."
+
+# Step 4: Serve dbt docs
+echo "Serving dbt docs..."
+dbt docs serve
