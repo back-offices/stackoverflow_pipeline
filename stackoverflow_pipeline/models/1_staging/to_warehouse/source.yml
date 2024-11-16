@@ -1,0 +1,23 @@
+
+version: 2
+sources:
+
+  - name: stackoverflow
+    description: The data lake where all raw data is dumped - append only.  Data from https://tinyurl.com/yc2w6zeh
+    tables:
+      - name: badges
+      - name: comments
+      - name: post_history
+      - name: post_links
+      - name: posts_answers
+      - name: posts_moderator_nomination
+      - name: posts_orphaned_tag_wiki
+      - name: posts_privilege_wiki
+      - name: posts_questions
+      - name: posts_tag_wiki
+      - name: posts_tag_wiki_excerpt
+      - name: posts_wiki_placeholder
+      - name: stackoverflow_posts
+      - name: tags
+      - name: users
+      - name: votes

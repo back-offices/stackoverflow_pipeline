@@ -1,0 +1,23 @@
+# This is am example config for your local dbt profiles.yml
+# Windows: C:\users\...\.dbt\profiles.yml
+# Mac: Run "open ~/.dbt/profiles.yml"
+
+stackoverflow_pipeline:
+  target: dev  # DBT_TARGET_PROFILE for a production orchestrator should be set to "deploy_env"
+  outputs:
+    prod:
+      type: bigquery
+      method: oauth
+      project: zains-gcp
+      dataset: stackoverflow
+      location: US
+      threads: 8
+      impersonate_service_account: zain-666@zains-gcp.iam.gserviceaccount.com
+    dev:
+      type: bigquery
+      method: oauth
+      project: zains-gcp
+      dataset: stackoverflow
+      location: US
+      threads: 8
+      impersonate_service_account: zain-666@zains-gcp.iam.gserviceaccount.com
