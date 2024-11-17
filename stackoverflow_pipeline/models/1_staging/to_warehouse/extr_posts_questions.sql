@@ -15,6 +15,7 @@ SELECT
     CAST(post_type_id AS INTEGER) AS post_type_id,
     CAST(score AS INTEGER) AS score,
     CAST(tags AS STRING) AS tags,
+    SPLIT(tags,"|") AS tags_array,
     CAST(view_count AS INTEGER) AS view_count,
     CAST(last_activity_date AS TIMESTAMP) AS last_activity_at,
     CAST(last_edit_date AS TIMESTAMP) AS last_edited_at,
