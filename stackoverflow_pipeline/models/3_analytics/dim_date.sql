@@ -1,0 +1,16 @@
+WITH dates AS (
+    SELECT
+        DATE(CAST(TIMESTAMP '2008-01-01 00:00:00 UTC' AS TIMESTAMP)) + INTERVAL n DAY AS Date
+    
+    FROM
+        UNNEST(GENERATE_ARRAY(0, 365 * 20)) AS n
+)
+SELECT
+    CAST(Date AS DATE) AS date_key,
+    EXTRACT(YEAR FROM Date) AS year,
+    EXTRACT(MONTH FROM Date) AS month,
+    EXTRACT(DAY FROM Date) AS day,
+    EXTRACT(WEEK FROM Date) AS week,
+    EXTRACT(DAYOFYEAR FROM Date) AS dayofyear
+
+FROM dates

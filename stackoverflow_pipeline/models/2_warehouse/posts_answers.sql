@@ -27,7 +27,7 @@ SELECT
             COALESCE(CAST(created_at AS STRING),''),
             COALESCE(CAST(owner_user_id AS STRING),'')
         )
-    ) as posts_answers_pk,
+    ) as post_answer_pk,
     *,
     CURRENT_TIMESTAMP() AS insertion_timestamp
 FROM posts_answers_dedup

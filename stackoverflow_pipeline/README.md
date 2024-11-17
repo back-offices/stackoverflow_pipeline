@@ -56,4 +56,6 @@ SQLFluff is used for linting and checking of code quality. It is built into the 
 - popular questions = highest view_count
 - trending questions = most recent (creation_date)
 - https://chatgpt.com/share/6738a471-8244-8001-8f8c-c943309960d3/continue
+- ERD diagram for constellation star schema (https://lucid.app/lucidchart/bca77f31-3eac-44b2-a93f-29b5fb831bab/edit?viewport_loc=66%2C375%2C2607%2C1422%2C0_0&invitationId=inv_73b3d199-5478-493a-9019-4c9a049c13f4)
 
+![ERD Diagram](assets/StackoverflowStarSchema.png)
