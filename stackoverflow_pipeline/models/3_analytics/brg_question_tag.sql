@@ -1,5 +1,5 @@
     SELECT
-        a.post_question_id AS question_id,
+        a.post_question_id,
         tag_name,
         b.tag_id
     
