@@ -48,3 +48,9 @@ models:
       +materialized: "table"
       +tags:
           - "analytics"
+        
+    4_semantics:
+      +dataset: 4_semantics
+      +materialized: "view"
+      +tags:
+          - "semantics"

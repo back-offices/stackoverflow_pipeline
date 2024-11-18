@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 SELECT
     c.tag_name,
     COUNT(a.post_question_id) AS total_questions,

@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 WITH time_diff AS
 
 (
