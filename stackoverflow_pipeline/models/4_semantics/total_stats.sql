@@ -5,7 +5,8 @@ SELECT
     COUNT(DISTINCT CASE WHEN a.accepted_answer_id IS NOT NULL THEN a.post_question_id END) AS total_answers_accepted, 
     SUM(a.answer_count) AS total_answers,
     AVG(a.body_length) AS avg_body_length,
-    AVG(a.view_count) AS avg_views,
+    SUM(a.view_count) AS views,
+    COUNT(DISTINCT(a.user_id)) AS question_users,
     COUNT(d.comment_text) AS total_comments,
     AVG(a.score) AS avg_score
 

@@ -1,0 +1,29 @@
+[sqlfluff]
+dialect = bigquery
+templater = dbt
+
+# Set the maximum line length
+max_line_length = 120
+
+# Define rules configuration
+exclude_rules = L003  # Example: Exclude rules (e.g., trailing comma in select statements)
+
+# Set verbosity for output
+verbose = 1
+
+# Adjust specific rules (Optional)
+[sqlfluff:rules:L010]  # Capitalisation of keywords
+capitalisation_policy = upper  # Options: 'upper', 'lower', 'capitalise'
+
+[sqlfluff:rules:L016]  # Ensure only single quotes are used for string literals
+forbid_double_quotes = True
+
+[sqlfluff:rules:L019]  # Ensure leading commas are consistent
+comma_style = trailing  # Options: 'leading' or 'trailing'
+
+[sqlfluff:rules:L034]  # Disallow wildcards in SELECT
+select_wildcard_policy = allow
+
+# Configuration for dbt projects (Optional)
+[sqlfluff:templater:dbt]
+project_dir = .  # Path to your dbt project directory

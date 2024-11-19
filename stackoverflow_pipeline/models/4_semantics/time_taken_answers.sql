@@ -23,7 +23,8 @@ ON a.post_question_id = c.post_question_id
 LEFT JOIN {{ref('dim_date')}} AS e
 ON a.date_key = e.date_key
 
-WHERE a.accepted_answer_id IS NULL
+WHERE 1=1
+-- AND a.accepted_answer_id IS NULL
 AND a.created_at IS NOT NULL
 AND b.created_at IS NOT NULL
 
