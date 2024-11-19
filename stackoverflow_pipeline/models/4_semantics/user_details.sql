@@ -4,7 +4,7 @@ SELECT
     c.age AS age,
     c.user_location AS user_location,
     COUNT(DISTINCT(c.user_id)) AS user_count,
-    COUNT(a.post_question_id) AS total_questions,
+    COUNT(DISTINCT(a.post_question_id)) AS total_questions,
     COUNT(DISTINCT CASE WHEN a.accepted_answer_id IS NOT NULL THEN a.post_question_id END) AS total_answers_accepted, 
     SUM(a.answer_count) AS total_answers,
 

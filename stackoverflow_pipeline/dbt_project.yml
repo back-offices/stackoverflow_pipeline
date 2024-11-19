@@ -32,10 +32,16 @@ models:
 
   stackoverflow_pipeline:
     1_staging:
-      +dataset: 2_warehouse
-      +materialized: "ephemeral"
-      +tags:
-          - "to_warehouse"
+      to_analytics:
+        +dataset: 3_analytics
+        +materialized: "ephemeral"
+        +tags:
+            - "to_analytics"
+      to_warehouse:
+        +dataset: 2_warehouse
+        +materialized: "ephemeral"
+        +tags:
+            - "to_warehouse"
 
     2_warehouse:
       +dataset: 2_warehouse
