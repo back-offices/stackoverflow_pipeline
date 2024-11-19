@@ -2,7 +2,9 @@
 A data pipeline created for Rittman Analytics that will process stackoverflow data available via GCP [public datasets](https://cloud.google.com/blog/products/gcp/google-bigquery-public-datasets-now-include-stack-overflow-q-a).
 Trial is found within this [repo](https://github.com/rittmananalytics/analytics_engineer_trial).
 
-## Using dbt & Developer Ways of Working (WoW)
+All links and information can either be found within this README, or on [these slides](https://docs.google.com/presentation/d/1z_woWHHGaGCnXDoDzcUufNwLIwtvzqbUx6LgSCg2AdA/edit#slide=id.g1f8bdc63c97_0_0).
+
+## Using dbt & Developer Ways of Working
 - Use of virtual environments is recommended, especially if you work on multiple client/internal projects requiring conflicting dbt or Python versions
 - Set up your local profiles.yml and add it to your .dbt/profiles.yml file, you may need to direct dbt to this new path:  
  ``` $ export DBT_PROFILES_DIR=path/to/directory``` & ```$ export DBT_PROJECT_DIR=path/to/directory```.
@@ -61,14 +63,3 @@ SQLFluff is used for linting and checking of code quality.  It is recommended to
 - Text analysis of questions & answers (grammer / question quality)
 - Analysis of "unaccepted" answers
 - different approaches to data modelling have not been considered (i.e. OBT)
-
-
-## Questions
-
-- [ ] How many questions remain unanswered over time?
-- [ ] What percentage of questions are unanswered? (by topic + total)
-- [ ] Which tags/topics have the most unanswered questions?
-- [ ] What types of questions are most likely to remain unanswered? (look at questions themselves - length, grammer, poorly written?) compare vs answered questions
-- [ ] How quickly do questions with no accepted answer receive one?
-- [ ] What are the highest-scored unanswered questions?
-- [ ] What is the relationship between unanswered questions and new technologies?
