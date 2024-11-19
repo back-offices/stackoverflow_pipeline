@@ -3,6 +3,7 @@ WITH time_diff AS
 (
 
 SELECT
+    e.year AS created_year,
     a.post_question_id,
     c.tag_name,
     MIN(a.created_at) AS question_created_at,
@@ -19,13 +20,17 @@ ON a.post_question_id = b.parent_id
 INNER JOIN {{ref('brg_question_tag')}} AS c
 ON a.post_question_id = c.post_question_id
 
-WHERE a.answer_count <> 0
+LEFT JOIN {{ref('dim_date')}} AS e
+ON a.date_key = e.date_key
+
+WHERE a.accepted_answer_id IS NULL
 AND a.created_at IS NOT NULL
 AND b.created_at IS NOT NULL
 
 GROUP BY
     a.post_question_id,
-    c.tag_name
+    c.tag_name,
+    e.year
 
 ORDER BY
     a.post_question_id DESC, c.tag_name DESC
@@ -33,6 +38,7 @@ ORDER BY
 )
 
 SELECT
+    created_year,
     tag_name,
     AVG(avg_answer_time_min) AS answer_time_min,
     AVG(avg_answer_time_hour) AS answer_time_hour,
@@ -40,6 +46,6 @@ SELECT
 
 FROM time_diff
 
-GROUP BY tag_name
+GROUP BY created_year, tag_name
 
-ORDER BY tag_name ASC
+ORDER BY created_year DESC,tag_name ASC

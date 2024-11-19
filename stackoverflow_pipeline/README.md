@@ -42,6 +42,12 @@ The data structure within the warehouse layer is generally agnostic, and for the
 
 ![Summarised ERD Diagram](assets/StackoverflowStarSchema.png)
 
+## Dashboard
+
+Dashboard - currently a work in progress can be found [here](https://lookerstudio.google.com/u/0/reporting/5cdffd8c-55c9-4779-acfc-cbaa73ac9bdb/page/tLuTE/edit)
+
+![Dashboard](assets/dashboard_pic.png)
+
 ## SQLFluff
 
 SQLFluff is used for linting and checking of code quality.  It is recommended to install and run SQLFluff locally prior to commiting your code to accelerate the development process. The rules enforced by SQLFluff can be found in the .sqlfluff file.
@@ -69,3 +75,6 @@ SQLFluff is used for linting and checking of code quality.  It is recommended to
 - [ ] How quickly do questions with no accepted answer receive one?
 - [ ] What are the highest-scored unanswered questions?
 - [ ] What is the relationship between unanswered questions and new technologies?
+- move dim + fct models to warehouse and materialise views into analytics?
+- answer more questions with a story!
+- add documentation

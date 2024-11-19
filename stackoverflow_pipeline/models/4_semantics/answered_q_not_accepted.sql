@@ -1,4 +1,5 @@
 SELECT
+    e.year AS created_year,
     c.tag_name,
     COUNT(a.post_question_id) AS total_questions,
     SUM(a.answer_count) AS total_answers,
@@ -14,9 +15,12 @@ ON a.post_question_id = b.post_question_id
 INNER JOIN {{ref('dim_tag')}} AS c
 ON b.tag_id = c.tag_id
 
+LEFT JOIN {{ref('dim_date')}} AS e
+ON a.date_key = e.date_key
+
 WHERE a.answer_count <> 0
 AND a.accepted_answer_id IS NOT NULL
 
-GROUP BY c.tag_name
+GROUP BY c.tag_name,created_year
 
-ORDER BY total_answers DESC,total_questions DESC, avg_views DESC
+ORDER BY created_year DESC, total_answers DESC,total_questions DESC
