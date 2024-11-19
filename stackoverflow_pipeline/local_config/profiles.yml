@@ -1,4 +1,4 @@
-# This is am example config for your local dbt profiles.yml
+# This is an example config for your local dbt profiles.yml
 # Windows: C:\users\...\.dbt\profiles.yml
 # Mac: Run "open ~/.dbt/profiles.yml"
 
@@ -12,7 +12,7 @@ stackoverflow_pipeline:
       dataset: stackoverflow
       location: US
       threads: 8
-      impersonate_service_account: zain-666@zains-gcp.iam.gserviceaccount.com
+      impersonate_service_account: 'serviceaccount@serviceaccount.com' # replace this
     dev:
       type: bigquery
       method: oauth
@@ -20,4 +20,4 @@ stackoverflow_pipeline:
       dataset: stackoverflow
       location: US
       threads: 8
-      impersonate_service_account: zain-666@zains-gcp.iam.gserviceaccount.com
+      impersonate_service_account: 'serviceaccount@serviceaccount.com' # replace this
