@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: users
+    description: >
+      This model processes the `users` source table, capturing information about platform users, including their activity, reputation, and profile details.
+    columns:
+      - name: user_pk
+        description: >
+          A unique primary key for each user, generated using a hash function on the `id` and `creation_date` fields for deduplication.
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: >
+          A unique identifier for the user. Links to other entities referencing the user.
+        tests:
+          - not_null
+          - unique
+      - name: user_display_name
+        description: >
+          The display name chosen by the user for their profile.
+      - name: about_me
+        description: >
+          A short biography or description provided by the user.
+      - name: age
+        description: >
+          The age of the user, if provided.
+      - name: user_location
+        description: >
+          The location specified by the user in their profile.
+      - name: reputation
+        description: >
+          The user's reputation score on the platform, representing their contributions and activity.
+      - name: up_votes
+        description: >
+          The total number of upvotes received by the user.
+      - name: down_votes
+        description: >
+          The total number of downvotes received by the user.
+      - name: views
+        description: >
+          The total number of profile views for the user.
+      - name: profile_image_url
+        description: >
+          The URL of the user's profile image, if provided.
+      - name: website_url
+        description: >
+          The URL of the user's personal or professional website, if provided.
+      - name: last_accessed_at
+        description: >
+          The timestamp of the user's last activity on the platform.
+      - name: created_at
+        description: >
+          The timestamp of the user's account creation.
+      - name: source_partition_timestamp
+        description: >
+          The timestamp when the data was processed in the pipeline. Used for partitioning and tracking data freshness.

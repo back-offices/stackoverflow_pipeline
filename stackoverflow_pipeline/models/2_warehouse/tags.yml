@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: tags
+    description: >
+      This model transforms the `tags` source table into a structured format for downstream analytics.
+      It provides metadata about tags used to categorize and organize posts.
+    columns:
+      - name: tag_id
+        description: >
+          A unique identifier for each tag. This field is used as the primary key and links 
+          to other tables or entities that reference tags.
+        tests:
+          - not_null
+          - unique
+      - name: tag_name
+        description: >
+          The name of the tag. Represents a keyword or category used to classify posts.
+      - name: count
+        description: >
+          The number of times this tag has been used across all posts.
+      - name: excerpt_post_id
+        description: >
+          The ID of the post that serves as the excerpt for this tag, typically providing 
+          a short description or definition of the tag.
+      - name: wiki_post_id
+        description: >
+          The ID of the post that serves as the wiki entry for this tag, offering 
+          detailed information about the tag.
+      - name: source_partition_timestamp
+        description: >
+          The timestamp when the data was processed in the pipeline. Used for partitioning 
+          and tracking data freshness.

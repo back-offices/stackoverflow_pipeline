@@ -1,4 +1,11 @@
 SELECT
+    FARM_FINGERPRINT(
+        CONCAT(
+            COALESCE(CAST(id AS STRING),''),
+            COALESCE(CAST(creation_date AS STRING),''),
+            COALESCE(CAST(user_id AS STRING),'')
+        )
+    ) as comment_pk,
     CAST(id AS INTEGER) AS comment_id,
     CAST(text AS STRING) AS comment_text,
     CAST(post_id AS INTEGER) AS post_id,

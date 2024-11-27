@@ -21,12 +21,6 @@ users_dedup AS (
 
 -- Final select and add insertion_timestamp
 SELECT
-    FARM_FINGERPRINT(
-        CONCAT(
-            COALESCE(CAST(user_id AS STRING),''),
-            COALESCE(CAST(created_at AS STRING),'')
-        )
-    ) as user_pk,
     *,
     CURRENT_TIMESTAMP() AS insertion_timestamp
 FROM users_dedup

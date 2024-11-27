@@ -1,4 +1,11 @@
 SELECT
+    FARM_FINGERPRINT(
+        CONCAT(
+            COALESCE(CAST(id AS STRING),''),
+            COALESCE(CAST(name AS STRING),''),
+            COALESCE(CAST(user_id AS STRING),'')
+        )
+    ) as badge_pk,
     CAST(id AS INTEGER) AS badge_id,
     CAST(name AS STRING) AS badge_name,
     CAST(date AS TIMESTAMP) AS badge_date,

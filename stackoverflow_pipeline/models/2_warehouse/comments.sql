@@ -21,13 +21,6 @@ comments_dedup AS (
 
 -- Final select and add insertion_timestamp
 SELECT
-    FARM_FINGERPRINT(
-        CONCAT(
-            COALESCE(CAST(comment_id AS STRING),''),
-            COALESCE(CAST(created_at AS STRING),''),
-            COALESCE(CAST(user_id AS STRING),'')
-        )
-    ) as comment_pk,
     *,
     CURRENT_TIMESTAMP() AS insertion_timestamp
 FROM comments_dedup

@@ -1,4 +1,11 @@
 SELECT
+    FARM_FINGERPRINT(
+        CONCAT(
+            COALESCE(CAST(id AS STRING),''),
+            COALESCE(CAST(creation_date AS STRING),''),
+            COALESCE(CAST(owner_user_id AS STRING),'')
+        )
+    ) as post_question_pk,
     CAST(id AS INTEGER) AS post_question_id,
     CAST(title AS STRING) AS post_question_title,
     CAST(body AS STRING) AS post_question_body,

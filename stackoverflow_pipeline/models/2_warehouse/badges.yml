@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: badges
+    description: >
+      This model transforms the `badges` source table into a structured format with 
+      type-casting for downstream analytics. It includes metadata about badges awarded 
+      to users, such as badge names, dates and deduplicates the table as well.
+    columns:
+      - name: badge_id
+        description: >
+          A unique identifier for each badge. This field is tested for uniqueness and 
+          cannot contain null values.
+        tests:
+          - not_null
+          - unique
+      - name: badge_name
+        description: >
+          The name of the badge awarded. Indicates the achievement or category the badge 
+          represents.
+      - name: badge_date
+        description: >
+          The timestamp when the badge was awarded.
+      - name: user_id
+        description: >
+          The identifier of the user who received the badge. Links to the users table.
+      - name: badge_class
+        description: >
+          A classification number for the badge, categorizing its importance or type.
+      - name: is_tag_based
+        description: >
+          A boolean field indicating if the badge is based on specific tags.
+      - name: source_partition_timestamp
+        description: >
+          The timestamp when the data was processed in the pipeline. Used for partitioning 
+          and tracking data freshness.

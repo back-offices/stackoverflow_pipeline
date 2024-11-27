@@ -1,4 +1,10 @@
 SELECT
+    FARM_FINGERPRINT(
+        CONCAT(
+            COALESCE(CAST(id AS STRING),''),
+            COALESCE(CAST(creation_date AS STRING),'')
+        )
+    ) as user_pk,
     CAST(id AS INTEGER) AS user_id,
     CAST(display_name AS STRING) AS user_display_name,
     CAST(about_me AS STRING) AS about_me,

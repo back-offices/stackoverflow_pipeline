@@ -21,13 +21,6 @@ posts_answers_dedup AS (
 
 -- Final select and add insertion_timestamp
 SELECT
-    FARM_FINGERPRINT(
-        CONCAT(
-            COALESCE(CAST(post_answer_id AS STRING),''),
-            COALESCE(CAST(created_at AS STRING),''),
-            COALESCE(CAST(owner_user_id AS STRING),'')
-        )
-    ) as post_answer_pk,
     *,
     CURRENT_TIMESTAMP() AS insertion_timestamp
 FROM posts_answers_dedup

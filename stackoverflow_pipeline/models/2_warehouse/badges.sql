@@ -21,13 +21,6 @@ badges_dedup AS (
 
 -- Final select and add insertion_timestamp
 SELECT
-    FARM_FINGERPRINT(
-        CONCAT(
-            COALESCE(CAST(badge_id AS STRING),''),
-            COALESCE(CAST(badge_name AS STRING),''),
-            COALESCE(CAST(user_id AS STRING),'')
-        )
-    ) as badge_pk,
     *,
     CURRENT_TIMESTAMP() AS insertion_timestamp
 FROM badges_dedup
