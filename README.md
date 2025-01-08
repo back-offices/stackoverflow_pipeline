@@ -1,5 +1,5 @@
 # **STACKOVERFLOW PIPELINE**
-A data pipeline created for Rittman Analytics that will process stackoverflow data available via GCP [public datasets](https://cloud.google.com/blog/products/gcp/google-bigquery-public-datasets-now-include-stack-overflow-q-a).
+A data pipeline created that will process stackoverflow data available via GCP [public datasets](https://cloud.google.com/blog/products/gcp/google-bigquery-public-datasets-now-include-stack-overflow-q-a).
 Trial is found within this [repo](https://github.com/rittmananalytics/analytics_engineer_trial).
 
 All links and information can either be found within this README, or on [these slides](https://docs.google.com/presentation/d/1z_woWHHGaGCnXDoDzcUufNwLIwtvzqbUx6LgSCg2AdA/edit#slide=id.g1f8bdc63c97_0_0).
